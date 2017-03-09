@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="userApp">
+<head>
+  <title>User Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/multiple-select.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+
+  <!-- External libaries -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <!-- Angular links -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  <!-- angularBootstrap link -->
+  <script type="text/javascript" src="js/ui-bootstrap-tpls.js"></script>
+
+  <script type="text/javascript" src="js/multiple-select.min.js"></script>
+
+</head>
+<body>
+  <!-- Navigation Bar-->
+  <nav-dir ng-hide="state.$current.hideNavbar"></nav-dir>
+
+  <!-- Angular Templates called here -->
+  <div ui-view></div>
+
+  <div class="container">
+    <!-- Footer -->
+    <footer>
+      <div class="row">
+        <div class="col-lg-12">
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- /.container -->
+
+  <!-- Angular Modules -->
+  <script type="text/javascript" src="user/app.module.js"></script>
+  <script type="text/javascript" src="user/app.routes.js"></script>
+  <script type="text/javascript" src="user/shared/navigation-bar/navbarDirective.js"></script>
+  <script type="text/javascript" src="user/shared/navigation-bar/navbarService.js"></script>
+  <script type="text/javascript" src="user/components/home/homeCtrl.js"></script>
+  <script type="text/javascript" src="user/components/home/homeService.js"></script>
+  <script type="text/javascript" src="user/components/apigui/apiguiCtrl.js"></script>
+  <script type="text/javascript" src="user/components/apigui/apiguiService.js"></script>
+  <script type="text/javascript" src="user/components/login/loginCtrl.js"></script>
+  <script type="text/javascript" src="user/components/login/loginService.js"></script>
+  <script type="text/javascript" src="user/components/gettrips/gettripsCtrl.js"></script>
+  <script type="text/javascript" src="user/components/gettrips/gettripsService.js"></script>
+</body>
+</html>

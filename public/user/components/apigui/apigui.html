@@ -1,0 +1,71 @@
+<div class="container" ng-controller="apiguiCtrl" >
+  <form name="form" class="form-horizontal" role="form" ng-submit="submit()">
+    <div class="form-group" ng-class="{ 'has-error': form.departure.$dirty && form.departure.$error.required }">
+      <label for="departure" class="col-sm-2 control-label">From</label>
+      <div class="col-sm-9">
+        <select id="departure" class="form-control" name="departure" ng-model="departure" ng-options="stop.id as stop.name for stop in stops" required>
+          <option value=""> -- Select Stop -- </option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="arrival" class="col-sm-2 control-label">To</label>
+      <div class="col-sm-9">
+        <select id="arrival" class="form-control" name="arrival" ng-class="{ 'has-error': form.departure.$error.required }" ng-model="arrival" ng-options="stop.id as stop.name for stop in stops" required>
+          <option value=""> -- Select Stop -- </option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="date" class="col-sm-2 control-label">Date</label>
+      <div class="col-sm-9">
+        <md-datepicker id="date" ng-model="travelDate" md-placeholder="Enter date"
+            md-min-date="minDate">
+        </md-datepicker>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="passengers" class="col-sm-2 control-label">Passengers</label>
+      <div class="col-sm-9">
+        <fieldset  class="passengers" data-ng-repeat="passenger in passengers">
+          <div class="row">
+            <div class="form-group col-xs-4">
+              <select class="form-control" ng-model="passenger.type" ng-options="ptype for ptype in ptypes">
+              </select>
+            </div>
+            <div class="form-group col-xs-7">
+              <multiple-autocomplete ng-model="passenger.discounts"
+                object-property="name"
+                suggestions-arr="pdiscounts">
+              </multiple-autocomplete>
+            </div>
+            <div class="form-group col-xs-1 remove-div">
+              <button type="button" class="btn btn-danger btn-sm" ng-show="$last && !$first" ng-click="removePassenger()"><span class="glyphicon glyphicon-remove"></span></button>
+            </div>
+          </div>
+        </fieldset>
+       <button type="button" class="addfields btn" ng-click="addNewPassenger()">Add passengers</button>
+       </div>
+     </div>
+    <h2> Optional parameters</h2>
+
+    <div class="form-actions">
+      <button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-primary">Search</button>
+    </div>
+    
+    <div id="test">
+      {{test}}
+    </div>
+
+   <div id="choicesDisplay">
+     <h2>Results</h2>
+     <pre><a href="{{url}}" target="_blank">{{url}}</a></pre>
+     <pre>{{parsetime}}</pre>
+     <pre id="result">{{result | json}}</pre>
+   </div>
+   
+   
+  </form>
+</div>

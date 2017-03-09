@@ -1,0 +1,20 @@
+html, body {
+  height: auto !important;
+  background-color: white;
+}
+.passengers div.form-group {
+  margin-right: 6px !important;
+}
+div.row {
+  padding-left: 15px !important;
+}
+#resultsDisplay  {
+  margin-top: 15px:
+}
+form.ng-submitted select.ng-invalid {
+  background: red;
+}
+#logo-main {
+  display: block;
+  margin: 20px auto 10px;
+}
